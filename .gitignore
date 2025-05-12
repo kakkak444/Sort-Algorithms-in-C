@@ -1,1 +1,6 @@
 .vscode/
+
+*-sort/*
+
+!*-sort/*.c
+!*-sort/*.h
