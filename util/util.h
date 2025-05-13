@@ -59,6 +59,10 @@ void generate_arr(int (*const gen)(void), const size_t n, int arr[]) {
     }
 }
 
+void init_random(void) {
+    srand(time(NULL));
+}
+
 int get_random(void) {
     return UTIL_MIN_RAND + (rand() % (UTIL_MAX_RAND - UTIL_MIN_RAND));
 }
