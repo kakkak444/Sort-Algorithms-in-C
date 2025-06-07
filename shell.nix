@@ -4,6 +4,6 @@ pkgs.mkShell {
 	buildInputs = [
 		pkgs.gcc
 		pkgs.git
+		pkgs.gdb
 	];
 }
-
