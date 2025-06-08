@@ -15,7 +15,7 @@
 #endif
 
 
-void print_arr(const size_t n, const int arr[]) {
+static inline void print_arr(const size_t n, const int arr[]) {
     printf("[ ");
 
     if (n > 0) {
@@ -28,7 +28,7 @@ void print_arr(const size_t n, const int arr[]) {
     printf(" ]\n");
 }
 
-int is_sorted(const size_t n, const int arr[]) {
+static inline int is_sorted(const size_t n, const int arr[]) {
     int a = arr[0];
     for (size_t i = 0;i < n;++i) {
         if (arr[i] < a) {
@@ -41,7 +41,7 @@ int is_sorted(const size_t n, const int arr[]) {
     return 1;
 }
 
-void swap(int* const x, int* const y) {
+static inline void swap(int* const x, int* const y) {
     if (x == y) {
         return;
     }
@@ -53,17 +53,17 @@ void swap(int* const x, int* const y) {
     *y = t;
 }
 
-void generate_arr(int (*const gen)(void), const size_t n, int arr[]) {
+static inline void generate_arr(int (*const gen)(void), const size_t n, int arr[]) {
     for (size_t i = 0;i < n;++i) {
         arr[i] = gen();
     }
 }
 
-void init_random(void) {
+static inline void init_random(void) {
     srand(time(NULL));
 }
 
-int get_random(void) {
+static inline int get_random(void) {
     return UTIL_MIN_RAND + (rand() % (UTIL_MAX_RAND - UTIL_MIN_RAND));
 }
 
